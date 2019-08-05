@@ -1,0 +1,21 @@
+terminal 1
+
+eabi-as handler.s -o handler.o -g 
+eabi-gcc processos.c -o processos.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processos.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex
+
+terminal 2
+eabi-qemu -se ex.elf
+
+
+
+eabi-as handler.s -o handler.o -g 
+eabi-gcc processo.c -o processo.o -g
+eabi-as processoB.s -o processoB.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processoA.o processoB.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex

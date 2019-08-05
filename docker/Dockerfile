@@ -19,7 +19,9 @@ RUN	dpkg --add-architecture i386 && \
 		# QEMU for emulated Versatile board
 		qemu-system-arm \
 		# Text editors
-		less $EDITORPKG && \
+		less $EDITORPKG \
+		# Python for gdb
+		python && \
 	rm -rf /var/lib/apt/lists/*
 
 # Create non-root "student" user

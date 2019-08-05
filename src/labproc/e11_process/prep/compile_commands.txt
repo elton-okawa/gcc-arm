@@ -1,0 +1,10 @@
+terminal 1
+
+eabi-as handler.s -o handler.o -g 
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o -o ex.elf
+eabi-bin --debugging ex.elf ex
+qemu ex
+
+terminal 2
+eabi-qemu -se ex.elf
