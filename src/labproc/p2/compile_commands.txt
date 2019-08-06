@@ -1,0 +1,40 @@
+terminal 1
+
+eabi-as handler.s -o handler.o -g 
+eabi-gcc processos.c -o processos.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processos.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex
+
+terminal 2
+eabi-qemu -se ex.elf
+
+
+Programa em C:
+
+eabi-as handler.s -o handler.o -g 
+eabi-gcc processos.c -o processos.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processos.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex
+
+Programa em Assembly:
+
+eabi-as handler.s -o handler.o -g 
+eabi-as processos.s -o processos.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processos.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex
+
+Programa misto:
+
+eabi-as handler.s -o handler.o -g 
+eabi-as processos.s -o processos.o -g
+eabi-gcc processos.c -o processos_c.o -g
+eabi-as irq.s -g -o irq.o -g
+eabi-ld -T irqld.ld irq.o handler.o processos.o processos_c.o -o ex.elf
+eabi-bin ex.elf ex
+qemu ex

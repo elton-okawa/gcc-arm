@@ -1,0 +1,8 @@
+ Além disso posso pedir na prova pequenas alteracoes no codigo como: 
+
+1 - Alem dos dois processos, insira um terceiro processo em C para rodar num codigo separado. 
+2 - faca a inicializacao da pilha do modo abort tambem e coloque um processo rodar no modo abort e outro processo no modo supervisor. 
+3 - Alem dos dois processos, insira um terceiro processo em assembly para rodar em codigo separado que imprime continuamente de 1 a 5.
+4 - Altere um processo (pode ser um dos dois processos) inserindo uma instrucao indefinida e coloque para rodar. Coloque o tratamento para instrucao indefinida que imprime o numero do processo rodando que causa a excessao. 
+5 - faça com que o processo 1 execute duas vezes mais que o processo 2. 
+6 - coloque um processo que imprime de 1 a 6 fazendo com que o processo chame uma funcao recursiva. Pode ser um dos dois processos que jah estao rodando. 
